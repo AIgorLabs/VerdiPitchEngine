@@ -7,8 +7,8 @@ if [ -z "$SSH_ORIGINAL_COMMAND" ]; then
 fi
 
 case "$SSH_ORIGINAL_COMMAND" in
-  "logs mattermostbot")
-    . /etc/profile && docker logs --tail 200 mattermostbot
+  "logs mattermostbot" | "logs igor")
+    . /etc/profile && (docker logs --tail 200 igor 2>/dev/null || docker logs --tail 200 mattermostbot)
     ;;
   "logs memory-broker")
     . /etc/profile && docker logs --tail 200 memory-broker

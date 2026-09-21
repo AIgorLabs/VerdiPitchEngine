@@ -1,3 +1,10 @@
+// +agentlint:enforce
+
+// Package ai provides Vertex AI enterprise telemetry and observation client.
+// @layer: Telemetry
+// @ref-rule: 400-TELEMETRY
+// @constraint: Zero-trust service account authentication and telemetry emission
+// @complexity: Medium
 package ai
 
 import (
@@ -7,8 +14,6 @@ import (
 	"cloud.google.com/go/vertexai/genai"
 	"google.golang.org/api/option"
 )
-
-// +agentlint:enforce
 
 // Config dictates the strict environmental requirements for the AI gateway.
 type Config struct {

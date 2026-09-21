@@ -1,3 +1,10 @@
+// +agentlint:enforce
+
+// Package main provides the entrypoint for the Verdi pitch-shifting CLI daemon.
+// @layer: Application
+// @ref-rule: 100-CORE
+// @constraint: CLI process orchestration and graceful worker pool lifecycle
+// @complexity: Low
 package main
 
 import (

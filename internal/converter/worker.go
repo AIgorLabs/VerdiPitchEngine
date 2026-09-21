@@ -1,3 +1,10 @@
+// +agentlint:enforce
+
+// Package converter worker provides bounded concurrent job processing.
+// @layer: Engine
+// @ref-rule: 100-CORE
+// @constraint: Bounded goroutine worker pool with context propagation
+// @complexity: Medium
 package converter
 
 import (

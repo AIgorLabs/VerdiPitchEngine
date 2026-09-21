@@ -1,3 +1,10 @@
+// +agentlint:enforce
+
+// Package converter provides audio conversion and pitch-shifting pipelines.
+// @layer: Engine
+// @ref-rule: 100-CORE
+// @constraint: High-fidelity DSP processing and lossless audio transformation
+// @complexity: High
 package converter
 
 import (

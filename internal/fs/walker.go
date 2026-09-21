@@ -1,3 +1,10 @@
+// +agentlint:enforce
+
+// Package fs provides filesystem traversal and asset preservation utilities.
+// @layer: Infrastructure
+// @ref-rule: 100-CORE
+// @constraint: Read-only source mounting and in-place metadata preservation
+// @complexity: Medium
 package fs
 
 import (

@@ -1,6 +1,13 @@
 //go:build mage
 // +build mage
 
+// +agentlint:enforce
+
+// Package main provides build, test, and release automation for VerdiPitchEngine.
+// @layer: Infrastructure
+// @ref-rule: 100-CORE
+// @constraint: Automated lifecycle management and quality gates
+// @complexity: Low
 package main
 
 import (
@@ -20,19 +27,42 @@ import (
 var Default = Help
 
 var Aliases = map[string]interface{}{
-	"lint-markdown":  LintMarkdown,
-	"fix-markdown":   FixMarkdown,
-	"fmt":            Fmt,
-	"vet":            Vet,
-	"vulncheck":      Vulncheck,
-	"lint":           Lint,
-	"test":           Test,
-	"ci-test":        CiTest,
-	"check-coverage": CheckCoverage,
-	"check":          Check,
-	"deps":           Deps,
-	"deploy":         Deploy,
-	"build":          Build,
+	"lint-markdown":      LintMarkdown,
+	"fix-markdown":       FixMarkdown,
+	"fmt":                Fmt,
+	"vet":                Vet,
+	"vulncheck":          Vulncheck,
+	"lint":               Lint,
+	"test":               Test,
+	"ci-test":            CiTest,
+	"check-coverage":     CheckCoverage,
+	"check":              Check,
+	"deps":               Deps,
+	"deploy":             Deploy,
+	"build":              Build,
+	"brutal":             Brutal,
+	"brutal-consensus":   BrutalConsensus,
+	"brutalconsensus":    BrutalConsensus,
+	"brutal-attest":      BrutalAttest,
+	"brutalattest":       BrutalAttest,
+	"brutal-staged":      BrutalStaged,
+	"brutalstaged":       BrutalStaged,
+	"brutal-tasks":       BrutalTasks,
+	"brutaltasks":        BrutalTasks,
+	"brutal-tasks-force": BrutalTasksForce,
+	"brutaltasksforce":   BrutalTasksForce,
+	"brutal-tasks-open":  BrutalTasksOpen,
+	"brutaltasksopen":    BrutalTasksOpen,
+	"brutal-scaffold":    BrutalScaffold,
+	"brutalscaffold":     BrutalScaffold,
+	"check-brutal":       CheckBrutal,
+	"checkbrutal":        CheckBrutal,
+	"ops-gap":            OpsGap,
+	"opsgap":             OpsGap,
+	"ops-swot":           OpsSwot,
+	"opsswot":            OpsSwot,
+	"ops-root":           OpsRoot,
+	"opsroot":            OpsRoot,
 }
 
 var (
@@ -46,11 +76,15 @@ func Help() {
 
 // LintMarkdown lints Markdown files for 1000-KEYS compliance using central script.
 func LintMarkdown() error {
-	if _, err := os.Stat("../AIgorLabs-github/scripts/lint-markdown.py"); err == nil {
-		fmt.Println("Running central markdown linter from local workspace...")
-		return sh.RunV("python3", "../AIgorLabs-github/scripts/lint-markdown.py")
+	lintScript := "../Forge/scripts/lint-markdown.py"
+	if _, err := os.Stat(lintScript); os.IsNotExist(err) {
+		lintScript = "../AIgorLabs-github/scripts/lint-markdown.py"
 	}
-	fmt.Println("WARNING: ../AIgorLabs-github not found. Skipping local markdown linting.")
+	if _, err := os.Stat(lintScript); err == nil {
+		fmt.Printf("Running central markdown linter from local workspace (%s)...\n", lintScript)
+		return sh.RunV("python3", lintScript)
+	}
+	fmt.Println("WARNING: ../Forge and ../AIgorLabs-github not found. Skipping local markdown linting.")
 	return nil
 }
 
@@ -298,3 +332,76 @@ func Build() error {
 	fmt.Println("Build complete!")
 	return nil
 }
+
+// Brutal runs an unsparing 1-to-10 architectural evaluation on the current workspace with Spinal Tap 11/10 mode.
+func Brutal() error {
+	return sh.RunV("arc-brutal", "-spinal-tap")
+}
+
+// BrutalConsensus runs a heterogeneous multi-model consensus brutal audit with 2/3 approval threshold.
+func BrutalConsensus() error {
+	return sh.RunV("arc-brutal", "-consensus", "-unconstrained", "-spinal-tap")
+}
+
+// BrutalAttest runs a brutal evaluation and generates a hardware attestation receipt.
+func BrutalAttest() error {
+	return sh.RunV("arc-brutal", "-attest", "-spinal-tap")
+}
+
+// BrutalStaged runs an incremental brutal evaluation restricted only to currently staged git files.
+func BrutalStaged() error {
+	return sh.RunV("arc-brutal", "-staged-only")
+}
+
+// BrutalTasks evaluates Master Task Dossiers (MTDs) across .agent/tasks/.
+func BrutalTasks() error {
+	return sh.RunV("arc-brutal", "-mtd")
+}
+
+// BrutalTasksOpen evaluates only open and in-progress Master Task Dossiers (MTDs).
+func BrutalTasksOpen() error {
+	return sh.RunV("arc-brutal", "-mtd", "-open")
+}
+
+// BrutalTasksForce forces re-evaluation of open Master Task Dossiers (MTDs), bypassing the cache.
+func BrutalTasksForce() error {
+	return sh.RunV("arc-brutal", "-mtd", "-open", "-force")
+}
+
+// BrutalScaffold runs an unsparing 1-to-10 architectural evaluation and auto-scaffolds Master Task Dossiers for findings.
+func BrutalScaffold() error {
+	return sh.RunV("arc-brutal", "-scaffold-remediation", "-spinal-tap")
+}
+
+// CheckBrutal executes the brutal architectural quality gate ensuring the target meets the minimum score threshold (8.0).
+func CheckBrutal() error {
+	return sh.RunV("arc-brutal", "-min-score", "8.0")
+}
+
+// OpsGap runs an unsparing /gen-brutal operational gap analysis against a specified target artifact with Spinal Tap 11/10 mode.
+func OpsGap(target string) error {
+	args := []string{"-spinal-tap"}
+	if target != "" {
+		args = append(args, target)
+	}
+	return sh.RunV("arc-brutal", args...)
+}
+
+// OpsRoot runs a forensic Root Cause Analysis (RCA) and 5-Whys defect autopsy against a specified issue or incident topic.
+func OpsRoot(target string) error {
+	args := []string{"-spinal-tap"}
+	if target != "" {
+		args = append(args, target)
+	}
+	return sh.RunV("arc-brutal", args...)
+}
+
+// OpsSwot runs an unsparing /gen-brutal SWOT analysis against a specified target artifact with Spinal Tap 11/10 mode.
+func OpsSwot(target string) error {
+	args := []string{"-spinal-tap"}
+	if target != "" {
+		args = append(args, target)
+	}
+	return sh.RunV("arc-brutal", args...)
+}
+
