@@ -14,6 +14,8 @@ created: "2026-05-10"
 updated: 2026-05-21
 body_hash: 665ea34e3c0afe28
 tags: [dev-asset, memory, roon, inotify, deadlock]
+doc_id: "48efae61-f01f-4af0-8b01-dba339087aaa"
+frontmatter_hash: "2d7e262aa77ea035"
 ---
 
 # VPE-020: Roon Inotify Race Conditions & Go Pipe Deadlocks

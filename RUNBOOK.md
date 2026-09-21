@@ -14,6 +14,8 @@ created: 2026-05-09
 updated: 2026-05-21
 tags: [audio, dsp]
 body_hash: eec16997fe9ced56
+doc_id: "76b3bc70-e3c5-4333-929d-d32ea7144a2a"
+frontmatter_hash: "23b66c396a880a84"
 ---
 # Verdi Pitch Engine Runbook
 

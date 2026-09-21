@@ -14,6 +14,8 @@ created: "2026-05-09"
 updated: 2026-05-21
 body_hash: 86063ffbe9b79f33
 tags: [dev-asset, memory, technical-resolution]
+doc_id: "c9996873-5b9b-4a45-8256-199ed6f64eef"
+frontmatter_hash: "9e197ff9952dad4e"
 ---
 
 # Technical Resolution: VPE-001 Bootstrap

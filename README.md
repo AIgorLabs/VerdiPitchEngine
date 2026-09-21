@@ -14,6 +14,8 @@ created: 2026-05-09
 updated: 2026-05-21
 tags: [audio, dsp]
 body_hash: 5bde0f69f546aa16
+doc_id: "5db2e69f-c175-4418-a535-244ffe2a8af2"
+frontmatter_hash: "6c8de7d4f901e244"
 ---
 # Verdi Pitch Engine
 

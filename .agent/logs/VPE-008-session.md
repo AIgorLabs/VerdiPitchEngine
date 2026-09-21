@@ -14,6 +14,8 @@ created: "2026-05-11"
 updated: 2026-05-21
 tags: [dev-asset, session, vpe-008]
 body_hash: ab852f39c7f02de8
+doc_id: "1bdd2d88-2d34-4081-868e-d1ff5e215ff7"
+frontmatter_hash: "7236b3ba05c40364"
 ---
 
 # Session Summary: VPE-008 Dynamic Strategy

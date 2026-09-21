@@ -14,6 +14,8 @@ created: "2026-05-10"
 updated: 2026-05-21
 tags: [dev-asset, memory, technical, architecture, docker]
 body_hash: 1f67bae32f4314fe
+doc_id: "ab67af24-a4af-4694-9495-349da79eadb8"
+frontmatter_hash: "d8ae6cada6a529d6"
 ---
 
 # Technical Memory: VPE-016 (Docker PID Namespace Isolation)

@@ -14,6 +14,8 @@ created: "2026-05-11"
 updated: 2026-05-21
 tags: [dev-asset, memory, vpe-008, technical]
 body_hash: bafa59f9af38919f
+doc_id: "9baf450a-17bd-41a9-ab17-66a68a504ac4"
+frontmatter_hash: "deacdc6dba961095"
 ---
 
 # Technical Decision: VPE-008 Roon Compliance & QNAP Parsing
