@@ -1,0 +1,25 @@
+name: Auto-Add to Enterprise Projects
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  issues: write
+  pull-requests: write
+  repository-projects: write
+
+jobs:
+  auto-add-master:
+    name: Auto-Add to Enterprise Engineering Master (Project #3)
+    uses: AIgorLabs/.github/.github/workflows/reusable-project-auto-add.yml@main
+    with:
+      runs-on: '["ubuntu-latest"]'
+      project-url: 'https://github.com/orgs/AIgorLabs/projects/3'
+    secrets: inherit

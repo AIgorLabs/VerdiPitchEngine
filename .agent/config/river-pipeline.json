@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "project": "VerdiPitchEngine",
+  "gateway_url": "${CORTEX_GATEWAY_URL:-https://cortex.aigorlabs.io/api/v1/events/publish}",
+  "spool_dir": ".agent/spool/events",
+  "mappings": [
+    {
+      "trigger": "audio.batch_started",
+      "topic": "audio.batch.started",
+      "payload_type_url": "type.googleapis.com/aigorlabs.audio.v1.BatchStartedEvent",
+      "target_mattermost_channel": "verdipitchengine",
+      "priority": 2,
+      "idempotency_template": "vpe-batch-start-{{.BatchID}}",
+      "retry_limit": 3,
+      "enabled": true
+    },
+    {
+      "trigger": "audio.album_converted",
+      "topic": "audio.album.converted",
+      "payload_type_url": "type.googleapis.com/aigorlabs.audio.v1.AlbumConvertedEvent",
+      "target_mattermost_channel": "verdipitchengine",
+      "priority": 3,
+      "idempotency_template": "vpe-album-{{.AlbumID}}-{{.Hash}}",
+      "retry_limit": 3,
+      "enabled": true
+    },
+    {
+      "trigger": "audio.batch_completed",
+      "topic": "audio.batch.completed",
+      "payload_type_url": "type.googleapis.com/aigorlabs.audio.v1.BatchCompletedEvent",
+      "target_mattermost_channel": "verdipitchengine",
+      "priority": 1,
+      "idempotency_template": "vpe-batch-comp-{{.BatchID}}",
+      "retry_limit": 5,
+      "enabled": true
+    },
+    {
+      "trigger": "audio.conversion_failed",
+      "topic": "audio.conversion.failed",
+      "payload_type_url": "type.googleapis.com/aigorlabs.audio.v1.ConversionFailedEvent",
+      "target_mattermost_channel": "system-alerts",
+      "priority": 1,
+      "idempotency_template": "vpe-fail-{{.BatchID}}-{{.FileID}}",
+      "retry_limit": 5,
+      "enabled": true
+    },
+    {
+      "trigger": "dsp.strategy_selected",
+      "topic": "dsp.strategy.selected",
+      "payload_type_url": "type.googleapis.com/aigorlabs.dsp.v1.StrategySelectedEvent",
+      "target_mattermost_channel": "verdipitchengine",
+      "priority": 3,
+      "idempotency_template": "vpe-strat-{{.Strategy}}-{{.Timestamp}}",
+      "retry_limit": 3,
+      "enabled": true
+    }
+  ]
+}

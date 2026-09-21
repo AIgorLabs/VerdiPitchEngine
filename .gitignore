@@ -29,6 +29,9 @@ keys/
 # Antigravity / Gemini Agent
 .agent/tmp/
 .agent/scratch/
+.agent/cache/
+.agent/personas
+.agent/spool/
 .gemini/
 
 # IDEs and Editors

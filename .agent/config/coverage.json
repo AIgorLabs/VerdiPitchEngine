@@ -8,12 +8,8 @@
     "api/proto"
   ],
   "package_targets": {
-    "pkg/strategy": 80.0,
-    "pkg/command": 80.0,
-    "pkg/orchestration": 80.0,
-    "pkg/client/geetwee": 80.0,
-    "internal/config": 80.0,
-    "pkg/audit": 100.0,
-    "pkg/guardrail": 95.0
+    "internal/converter": 85.0,
+    "internal/fs": 90.0,
+    "pkg/ai": 85.0
   }
 }

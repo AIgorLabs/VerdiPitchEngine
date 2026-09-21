@@ -4,5 +4,18 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"gopls": {
+			"build.buildFlags": [
+				"-tags=mage"
+			]
+		},
+		"go.buildFlags": [
+			"-tags=mage"
+		],
+		"go.buildTags": "mage",
+		"go.toolsEnvVars": {
+			"GOFLAGS": "-tags=mage"
+		}
+	}
 }
