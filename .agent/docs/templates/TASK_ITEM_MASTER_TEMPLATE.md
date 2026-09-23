@@ -1,0 +1,1 @@
+/Users/epawlik/Dev/Workspace/Archon/.agent/docs/templates/TASK_ITEM_MASTER_TEMPLATE.md
