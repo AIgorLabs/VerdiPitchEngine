@@ -40,9 +40,9 @@ code_authority:
 created: "2026-08-17"
 updated: "2026-09-21"
 tags: [agent-card, operational-contract, verdipitchengine, audio, dsp]
-doc_id: "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b"
-body_hash: "463091a3e84b5412"
-frontmatter_hash: "80267b5e396a1ff7"
+doc_id: "d7ff6c6a-db15-4547-bfb0-0cc82bd2d167"
+body_hash: "59616c8674d52ad1"
+frontmatter_hash: "544e97142a46abbf"
 ---
 
 # VerdiPitchEngine Agent Operational Directive Card
@@ -64,7 +64,8 @@ You are operating inside **VerdiPitchEngine** (`VPE`), a **personal high-fidelit
    - Recompute markdown hashes with `arc fixmarkdown <path>`.
 
 4. **Quality Gate Verification**:
-   - Run `mage check` or `go test -v -race ./...` before concluding tasks.
+   - For all tasks modifying source code (Gates 3, 4, 7), run `mage check` or `go test -v -race ./...` before concluding development.
+   - For documentation-only formalization tasks (Gates 2, 5, 6), validate compliance via `arc lintmarkdown` and `arc doctor` without running redundant test suites.
 
 ---
 
