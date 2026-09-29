@@ -27,12 +27,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "22911cd5-b12c-4798-8f21-c0155338d800"
-body_hash: "367aa7115959deeb"
-frontmatter_hash: "95fdd01d89b65aba"
+body_hash: "71fca67dac6f271b"
+frontmatter_hash: "61d90f872d2770fd"
 created: "2026-09-21"
 updated: "2026-05-09"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
-milestone: ".agent/config/milestones.json#5"
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
+milestone: ".agent/config/milestones.json#1"
 mattermost_dispatch_hash: "6460451a1a611690c964a055383371da"
 ---
 
@@ -47,7 +47,7 @@ mattermost_dispatch_hash: "6460451a1a611690c964a055383371da"
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/86bqc4reqtbkij7mkdrugam5za)
-- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE
