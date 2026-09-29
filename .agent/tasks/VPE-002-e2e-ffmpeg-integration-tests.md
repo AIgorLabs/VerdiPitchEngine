@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "3f7ee601-e665-4011-9ed3-e8225775f600"
-body_hash: "d81c7d904027b008"
-frontmatter_hash: "add1ca9a9a5dbce0"
+body_hash: "c31c6bb49feed62c"
+frontmatter_hash: "dc056c76fe0d66ba"
 created: "2026-09-21"
 updated: "2026-05-09"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "7478ca8826e4983827ee86afc3f903ea"
 ---
 
 # VPE-002: E2E FFmpeg Integration Tests
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/6c7xs1ygt7gndbaptzu57asz3c)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE

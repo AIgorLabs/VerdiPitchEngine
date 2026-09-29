@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "5380b74b-1868-4db9-8bc8-6c783ba8c542"
-body_hash: "05f7b93076f09331"
-frontmatter_hash: "efeee4c7fa96603d"
+body_hash: "7e986e29d255d85e"
+frontmatter_hash: "d9cbcb1985fddfe1"
 created: "2026-09-21"
 updated: "2026-05-10"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "579aca63fa9d232338ed72e6cea83556"
 ---
 
 # VPE-013: Roon Metadata In-Place Preservation
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/hy99dzpayf8wpkkdqm9xd65wiw)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE

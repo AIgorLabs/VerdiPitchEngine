@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "c09dd622-28bc-4c23-b5ab-b4a92c422398"
-body_hash: "e71ceb6538b9291f"
-frontmatter_hash: "3af1a8bcc7fa1b7a"
+body_hash: "606e43115011dd2e"
+frontmatter_hash: "e963d27285f85614"
 created: "2026-09-21"
 updated: "2026-05-09"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "e9993c0640aa4d3c4e9546b824d4998d"
 ---
 
 # VPE-001: Bootstrap Core Architecture and Build Infrastructure
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/n7aafhax6i8d7rz9zywu8tiqiy)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE

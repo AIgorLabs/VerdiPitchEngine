@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "e19b87b8-bfc0-4bbf-b958-4289221b705f"
-body_hash: "7d0b7f106bf69821"
-frontmatter_hash: "49037c103fcb67d1"
+body_hash: "c92d51996fc4a4b6"
+frontmatter_hash: "02f7e8f0cb433a01"
 created: "2026-09-21"
 updated: "2026-05-21"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "e3a737095fdc245671ec88b0c412c062"
 ---
 
 # VPE-003: OpenBrain Telemetry Subsystem
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/h6cncc9ybbyrunfx9yh7td1feh)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE

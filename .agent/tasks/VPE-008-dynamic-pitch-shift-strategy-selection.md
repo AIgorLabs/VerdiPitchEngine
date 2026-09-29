@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "4df99815-f0b3-4b7e-861f-58406af24e43"
-body_hash: "0999fdbbc81bc3b3"
-frontmatter_hash: "b7ec153d40ad69cc"
+body_hash: "7e5f9029b10d2170"
+frontmatter_hash: "ce9712f0c558a7c7"
 created: "2026-09-21"
 updated: "2026-05-12"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "ca0fa8dda53db16284787535be1d2bbe"
 ---
 
 # VPE-008: Dynamic Pitch-Shift Strategy Selection
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/5ymwz15nkpfitehp6gu94ag5mo)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE

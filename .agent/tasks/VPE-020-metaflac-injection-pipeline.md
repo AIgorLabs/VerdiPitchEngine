@@ -27,11 +27,13 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "6ef73433-bc34-49b9-9a47-a9e3384738a1"
-body_hash: "63b90ae790837f64"
-frontmatter_hash: "deaec95a67050f58"
+body_hash: "3df5e370439c32da"
+frontmatter_hash: "517394d9dfade62c"
 created: "2026-09-21"
 updated: "2026-05-10"
-tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture"]
+tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
+milestone: ".agent/config/milestones.json#5"
+mattermost_dispatch_hash: "cb8ea2eb385e8a44ce1756bd37be0de8"
 ---
 
 # VPE-020: Metaflac Injection Pipeline
@@ -45,6 +47,7 @@ tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infr
 
 ## 2. Supplemental Architectural References & RFCs
 - **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/je8bebsqtj89dpsoe1r9yqerrc)
+- **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#5)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
 - **RFC / Design Documents**: NONE
