@@ -5,7 +5,8 @@ title: "VPE-00013: Roon Metadata In-Place Preservation"
 description: "Roon Metadata In-Place Preservation"
 version: "1.0.0"
 status: "Completed"
-mattermost_thread_id: "hy99dzpayf8wpkkdqm9xd65wiw"
+mattermost_thread_id: "bawrfeheutfszfqakmqyp3jxqe"
+mattermost_dispatch_hash: "468f5f9d9f5b20d1fa00d916cce17114"
 cssclasses:
     - "task-completed"
     - "archived-dossier"
@@ -27,13 +28,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "5380b74b-1868-4db9-8bc8-6c783ba8c542"
-body_hash: "7370581c5f85778e"
-frontmatter_hash: "0fba31e2b3fc47cd"
+body_hash: "9b165471eef4075d"
+frontmatter_hash: "5f311811b2d1f882"
 created: "2026-09-21"
 updated: "2026-05-10"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
 milestone: ".agent/config/milestones.json#1"
-mattermost_dispatch_hash: "579aca63fa9d232338ed72e6cea83556"
 ---
 
 # VPE-00013: Roon Metadata In-Place Preservation
@@ -46,7 +46,7 @@ mattermost_dispatch_hash: "579aca63fa9d232338ed72e6cea83556"
 ---
 
 ## 2. Supplemental Architectural References & RFCs
-- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/hy99dzpayf8wpkkdqm9xd65wiw)
+- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/bawrfeheutfszfqakmqyp3jxqe)
 - **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE

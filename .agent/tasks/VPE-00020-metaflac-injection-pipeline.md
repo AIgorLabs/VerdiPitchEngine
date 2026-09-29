@@ -5,7 +5,8 @@ title: "VPE-00020: Metaflac Injection Pipeline"
 description: "Metaflac Injection Pipeline"
 version: "1.0.0"
 status: "Completed"
-mattermost_thread_id: "je8bebsqtj89dpsoe1r9yqerrc"
+mattermost_thread_id: "wfc688fzsfn4idixq7mwzuyzsw"
+mattermost_dispatch_hash: "fb2f971e673f69c1ec2a5b0f8d10708c"
 cssclasses:
     - "task-completed"
     - "archived-dossier"
@@ -27,13 +28,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "6ef73433-bc34-49b9-9a47-a9e3384738a1"
-body_hash: "470c5975166b0c1d"
-frontmatter_hash: "34cca817025eaece"
+body_hash: "e829aae3d29a4d0c"
+frontmatter_hash: "181df94b7c9e32be"
 created: "2026-09-21"
 updated: "2026-05-10"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
 milestone: ".agent/config/milestones.json#1"
-mattermost_dispatch_hash: "cb8ea2eb385e8a44ce1756bd37be0de8"
 ---
 
 # VPE-00020: Metaflac Injection Pipeline
@@ -46,7 +46,7 @@ mattermost_dispatch_hash: "cb8ea2eb385e8a44ce1756bd37be0de8"
 ---
 
 ## 2. Supplemental Architectural References & RFCs
-- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/je8bebsqtj89dpsoe1r9yqerrc)
+- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/wfc688fzsfn4idixq7mwzuyzsw)
 - **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE

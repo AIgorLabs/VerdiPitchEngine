@@ -5,7 +5,8 @@ title: "VPE-00016: Persistent Execution Logging & Proxy Bugfix"
 description: "Persistent Execution Logging & Proxy Bugfix"
 version: "1.0.0"
 status: "Completed"
-mattermost_thread_id: "ttedes84mjrr3xw1a58a7mf4yy"
+mattermost_thread_id: "hwqpi5ae8tnw7gjfg5fxqjo8gy"
+mattermost_dispatch_hash: "b90d4aee8c665cfb939c3380f0dbea6d"
 cssclasses:
     - "task-completed"
     - "archived-dossier"
@@ -27,13 +28,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "244a9645-43ae-46bf-a53e-11f0b28ccb68"
-body_hash: "b5fb4f503aa6b2ca"
-frontmatter_hash: "c9b5dad74e944f53"
+body_hash: "af5bfc4d578ed7f9"
+frontmatter_hash: "b58858d82c77e14a"
 created: "2026-09-21"
 updated: "2026-05-10"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
 milestone: ".agent/config/milestones.json#1"
-mattermost_dispatch_hash: "fa6c53c16b4d2cc8e0343fea4defb2ff"
 ---
 
 # VPE-00016: Persistent Execution Logging & Proxy Bugfix
@@ -46,7 +46,7 @@ mattermost_dispatch_hash: "fa6c53c16b4d2cc8e0343fea4defb2ff"
 ---
 
 ## 2. Supplemental Architectural References & RFCs
-- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/ttedes84mjrr3xw1a58a7mf4yy)
+- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/hwqpi5ae8tnw7gjfg5fxqjo8gy)
 - **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE

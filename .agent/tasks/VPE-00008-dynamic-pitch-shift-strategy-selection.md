@@ -5,7 +5,8 @@ title: "VPE-00008: Dynamic Pitch-Shift Strategy Selection"
 description: "Dynamic Pitch-Shift Strategy Selection"
 version: "1.0.0"
 status: "Completed"
-mattermost_thread_id: "5ymwz15nkpfitehp6gu94ag5mo"
+mattermost_thread_id: "r1ujan68cpydfgqdh8akg5bexa"
+mattermost_dispatch_hash: "1b14ea8e1fab9cdbe73709075e20baa3"
 cssclasses:
     - "task-completed"
     - "archived-dossier"
@@ -27,13 +28,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "4df99815-f0b3-4b7e-861f-58406af24e43"
-body_hash: "38ee94f6ca42588b"
-frontmatter_hash: "26ebb7f704a3c742"
+body_hash: "11a430b1c8e636f8"
+frontmatter_hash: "e0d839b725f6581c"
 created: "2026-09-21"
 updated: "2026-05-12"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
 milestone: ".agent/config/milestones.json#1"
-mattermost_dispatch_hash: "ca0fa8dda53db16284787535be1d2bbe"
 ---
 
 # VPE-00008: Dynamic Pitch-Shift Strategy Selection
@@ -46,7 +46,7 @@ mattermost_dispatch_hash: "ca0fa8dda53db16284787535be1d2bbe"
 ---
 
 ## 2. Supplemental Architectural References & RFCs
-- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/5ymwz15nkpfitehp6gu94ag5mo)
+- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/r1ujan68cpydfgqdh8akg5bexa)
 - **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE

@@ -5,7 +5,8 @@ title: "VPE-00002: E2E FFmpeg Integration Tests"
 description: "E2E FFmpeg Integration Tests"
 version: "1.0.0"
 status: "Completed"
-mattermost_thread_id: "6c7xs1ygt7gndbaptzu57asz3c"
+mattermost_thread_id: "bbuzsuh547fapcn55xozxj15ho"
+mattermost_dispatch_hash: "418df66448eeffaa4dfad27f4eb2befa"
 cssclasses:
     - "task-completed"
     - "archived-dossier"
@@ -27,13 +28,12 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "3f7ee601-e665-4011-9ed3-e8225775f600"
-body_hash: "83f5dbc7290897a6"
-frontmatter_hash: "3bc09501e1fcad00"
+body_hash: "f50e32db306e0ee9"
+frontmatter_hash: "130ddd733b3a027a"
 created: "2026-09-21"
 updated: "2026-05-09"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
 milestone: ".agent/config/milestones.json#1"
-mattermost_dispatch_hash: "7478ca8826e4983827ee86afc3f903ea"
 ---
 
 # VPE-00002: E2E FFmpeg Integration Tests
@@ -46,7 +46,7 @@ mattermost_dispatch_hash: "7478ca8826e4983827ee86afc3f903ea"
 ---
 
 ## 2. Supplemental Architectural References & RFCs
-- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/6c7xs1ygt7gndbaptzu57asz3c)
+- **Mattermost Thread URI**: [ChatOps Thread](https://chat.aigorlabs.io/aigorlabs-devops/pl/bbuzsuh547fapcn55xozxj15ho)
 - **Milestone**: [Spinal Tap 11/10 Autonomous Governance Architecture](.agent/config/milestones.json#1)
 - **Primary Technical Guide**: NONE
 - **User / Operator Guide**: NONE
