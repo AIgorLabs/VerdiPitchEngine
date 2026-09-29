@@ -11,7 +11,7 @@ dev_stage: "Planning"
 priority: "Medium"
 origin: "Post-Mortem"
 parent_issue: "NONE"
-github_issue: "https://github.com/empawlik/VerdiPitchEngine/issues/26"
+github_issue: "https://github.com/AIgorLabs/VerdiPitchEngine/issues/26"
 manifesto_domain: "Cost & Efficiency"
 tech_stack: ["Go", "Markdown"]
 atlas_specs: ["atlas:golang", "atlas:opa"]
@@ -24,7 +24,7 @@ contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "5985686e-8f35-427c-a4af-bf8c79140622"
 body_hash: "d733678f82fcc5af"
-frontmatter_hash: "f49a841a4ff35b15"
+frontmatter_hash: "95444d1a0b167e86"
 created: "2026-09-29"
 updated: "2026-09-29"
 milestone: ".agent/config/milestones.json#1"

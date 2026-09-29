@@ -1,4 +1,4 @@
-module github.com/empawlik/verdi-pitch-engine
+module github.com/AIgorLabs/VerdiPitchEngine
 
 go 1.26.5
 

@@ -13,7 +13,7 @@ dependencies: []
 created: 2026-05-09
 updated: 2026-05-21
 tags: [audio, dsp]
-body_hash: eec16997fe9ced56
+body_hash: "885779fa6be71c36"
 doc_id: "76b3bc70-e3c5-4333-929d-d32ea7144a2a"
 frontmatter_hash: "23b66c396a880a84"
 ---
@@ -55,7 +55,7 @@ Available targets:
 The application is deployed via Docker, commonly on QNAP or Synology NAS environments. The engine now utilizes a `docker-compose.yml` file to initialize an interactive Container Station environment.
 
 ```bash
-docker build -t empawlik/verdi-pitch-engine:latest .
+docker build -t aigorlabs/verdi-pitch-engine:latest .
 docker-compose up -d
 ```
 ### Dynamic Target Deployment
@@ -114,7 +114,7 @@ To verify connection and generate telemetry validation, invoke the package's age
 ```go
 import (
 	"context"
-	"github.com/empawlik/verdi-pitch-engine/pkg/ai"
+	"github.com/AIgorLabs/VerdiPitchEngine/pkg/ai"
 )
 
 func main() {

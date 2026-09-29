@@ -17,7 +17,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/empawlik/verdi-pitch-engine/internal/fs"
+	"github.com/AIgorLabs/VerdiPitchEngine/internal/fs"
 	"github.com/vbauerster/mpb/v8"
 	"github.com/vbauerster/mpb/v8/decor"
 )

@@ -11,7 +11,7 @@ dev_stage: "Planning"
 priority: "Medium"
 origin: "Post-Mortem"
 parent_issue: "NONE"
-github_issue: "https://github.com/empawlik/VerdiPitchEngine/issues/43"
+github_issue: "https://github.com/AIgorLabs/VerdiPitchEngine/issues/43"
 manifesto_domain: "Security & Infrastructure"
 tech_stack: ["Go", "Markdown"]
 atlas_specs: ["atlas:golang", "atlas:opa"]
@@ -24,7 +24,7 @@ contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "f740589c-0d84-402e-9bd1-75265d0e9d24"
 body_hash: "6df97abac1aad6d3"
-frontmatter_hash: "0e74179cc6820298"
+frontmatter_hash: "aa9ae694095b6d93"
 created: "2026-09-29"
 updated: "2026-09-29"
 milestone: ".agent/config/milestones.json#1"

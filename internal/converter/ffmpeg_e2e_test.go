@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/empawlik/verdi-pitch-engine/internal/fs"
+	"github.com/AIgorLabs/VerdiPitchEngine/internal/fs"
 )
 
 func setupSyntheticAudio(t *testing.T, outPath string) {

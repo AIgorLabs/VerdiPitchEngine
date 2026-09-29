@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/empawlik/verdi-pitch-engine/internal/fs"
+	"github.com/AIgorLabs/VerdiPitchEngine/internal/fs"
 )
 
 func TestRunPool(t *testing.T) {

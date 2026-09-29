@@ -11,7 +11,7 @@ dev_stage: "Planning"
 priority: "Medium"
 origin: "Post-Mortem"
 parent_issue: "NONE"
-github_issue: "https://github.com/empawlik/VerdiPitchEngine/issues/36"
+github_issue: "https://github.com/AIgorLabs/VerdiPitchEngine/issues/36"
 manifesto_domain: "Latency & Performance"
 tech_stack: ["Go", "Markdown"]
 atlas_specs: ["atlas:golang", "atlas:opa"]
@@ -24,7 +24,7 @@ contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "f6543288-217b-4216-9ba1-3d20cac366b7"
 body_hash: "d42f2273a6c44490"
-frontmatter_hash: "9ec4038c9e1b0313"
+frontmatter_hash: "7ea5c9e3cf12b620"
 created: "2026-09-29"
 updated: "2026-09-29"
 milestone: ".agent/config/milestones.json#1"

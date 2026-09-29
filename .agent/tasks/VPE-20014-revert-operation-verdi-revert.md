@@ -11,7 +11,7 @@ dev_stage: "Planning"
 priority: "Medium"
 origin: "Post-Mortem"
 parent_issue: "NONE"
-github_issue: "https://github.com/empawlik/VerdiPitchEngine/issues/25"
+github_issue: "https://github.com/AIgorLabs/VerdiPitchEngine/issues/25"
 manifesto_domain: "Quality Engineering"
 tech_stack: ["Go", "Markdown"]
 atlas_specs: ["atlas:golang", "atlas:opa"]
@@ -24,7 +24,7 @@ contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "9a0605e1-820f-46c6-9429-441f50d4c75c"
 body_hash: "642d93b46b0b2086"
-frontmatter_hash: "169f99c592d5debb"
+frontmatter_hash: "f7b7cebec0139724"
 created: "2026-09-29"
 updated: "2026-09-29"
 milestone: ".agent/config/milestones.json#1"

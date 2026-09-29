@@ -15,7 +15,7 @@ dev_stage: "Production"
 priority: "Medium"
 origin: "Completed"
 parent_issue: "NONE"
-github_issue: "https://github.com/empawlik/VerdiPitchEngine/issues/3"
+github_issue: "https://github.com/AIgorLabs/VerdiPitchEngine/issues/3"
 manifesto_domain: "Infrastructure & Architecture"
 tech_stack: ["Go", "Markdown"]
 atlas_specs: ["atlas:golang", "atlas:opa"]
@@ -27,8 +27,8 @@ platform: "CLI"
 contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "e19b87b8-bfc0-4bbf-b958-4289221b705f"
-body_hash: "e800772dabd14d75"
-frontmatter_hash: "26a4efdd133d9bd3"
+body_hash: "db1db42d439f665f"
+frontmatter_hash: "a3148faa9f4a9de4"
 created: "2026-09-21"
 updated: "2026-05-21"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-5"]
@@ -183,7 +183,7 @@ None reported; implementation strictly aligned with architectural specifications
 - **Session Log**: NONE
 - **Technical Memory**: NONE
 - **Post-Mortem Report**: [VPE-003 Post-Mortem](.agent/docs/gap-analysis/task-post-mortem/VPE-003.md)
-- **Pull Request**: https://github.com/empawlik/VerdiPitchEngine/issues/3
+- **Pull Request**: https://github.com/AIgorLabs/VerdiPitchEngine/issues/3
 
 ### 13.5 Retrospective Insights, WVI & Cognitive Persona Performance
 - **WVI Score**: `1.00 (Standard Velocity Baseline)`

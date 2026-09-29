@@ -15,8 +15,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/empawlik/verdi-pitch-engine/internal/converter"
-	"github.com/empawlik/verdi-pitch-engine/internal/fs"
+	"github.com/AIgorLabs/VerdiPitchEngine/internal/converter"
+	"github.com/AIgorLabs/VerdiPitchEngine/internal/fs"
 )
 
 var (
