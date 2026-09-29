@@ -20,6 +20,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AIgorLabs/Archon/pkg/tasksync"
 	"github.com/magefile/mage/mg"
 	"github.com/magefile/mage/sh"
 )
@@ -27,42 +28,56 @@ import (
 var Default = Help
 
 var Aliases = map[string]interface{}{
-	"lint-markdown":      LintMarkdown,
-	"fix-markdown":       FixMarkdown,
-	"fmt":                Fmt,
-	"vet":                Vet,
-	"vulncheck":          Vulncheck,
-	"lint":               Lint,
-	"test":               Test,
-	"ci-test":            CiTest,
-	"check-coverage":     CheckCoverage,
-	"check":              Check,
-	"deps":               Deps,
-	"deploy":             Deploy,
-	"build":              Build,
-	"brutal":             Brutal,
-	"brutal-consensus":   BrutalConsensus,
-	"brutalconsensus":    BrutalConsensus,
-	"brutal-attest":      BrutalAttest,
-	"brutalattest":       BrutalAttest,
-	"brutal-staged":      BrutalStaged,
-	"brutalstaged":       BrutalStaged,
-	"brutal-tasks":       BrutalTasks,
-	"brutaltasks":        BrutalTasks,
-	"brutal-tasks-force": BrutalTasksForce,
-	"brutaltasksforce":   BrutalTasksForce,
-	"brutal-tasks-open":  BrutalTasksOpen,
-	"brutaltasksopen":    BrutalTasksOpen,
-	"brutal-scaffold":    BrutalScaffold,
-	"brutalscaffold":     BrutalScaffold,
-	"check-brutal":       CheckBrutal,
-	"checkbrutal":        CheckBrutal,
-	"ops-gap":            OpsGap,
-	"opsgap":             OpsGap,
-	"ops-swot":           OpsSwot,
-	"opsswot":            OpsSwot,
-	"ops-root":           OpsRoot,
-	"opsroot":            OpsRoot,
+	"lint-markdown":        LintMarkdown,
+	"fix-markdown":         FixMarkdown,
+	"fmt":                  Fmt,
+	"vet":                  Vet,
+	"vulncheck":            Vulncheck,
+	"lint":                 Lint,
+	"test":                 Test,
+	"ci-test":              CiTest,
+	"check-coverage":       CheckCoverage,
+	"check":                Check,
+	"deps":                 Deps,
+	"deploy":               Deploy,
+	"build":                Build,
+	"syncissues":           SyncIssues,
+	"sync-issues":          SyncIssues,
+	"syncissuestargeted":   SyncIssuesTargeted,
+	"sync-issues-targeted": SyncIssuesTargeted,
+	"syncbacklogs":         SyncBacklogs,
+	"sync-backlogs":        SyncBacklogs,
+	"audit-task-sync":      AuditTaskSync,
+	"audittasksync":        AuditTaskSync,
+	"audit-backlog":        AuditBacklog,
+	"auditbacklog":         AuditBacklog,
+	"next-task":            NextTask,
+	"nexttask":             NextTask,
+	"commit":               Commit,
+	"commitmain":           CommitMain,
+	"brutal":               Brutal,
+	"brutal-consensus":     BrutalConsensus,
+	"brutalconsensus":      BrutalConsensus,
+	"brutal-attest":        BrutalAttest,
+	"brutalattest":         BrutalAttest,
+	"brutal-staged":        BrutalStaged,
+	"brutalstaged":         BrutalStaged,
+	"brutal-tasks":         BrutalTasks,
+	"brutaltasks":          BrutalTasks,
+	"brutal-tasks-force":   BrutalTasksForce,
+	"brutaltasksforce":     BrutalTasksForce,
+	"brutal-tasks-open":    BrutalTasksOpen,
+	"brutaltasksopen":      BrutalTasksOpen,
+	"brutal-scaffold":      BrutalScaffold,
+	"brutalscaffold":       BrutalScaffold,
+	"check-brutal":         CheckBrutal,
+	"checkbrutal":          CheckBrutal,
+	"ops-gap":              OpsGap,
+	"opsgap":               OpsGap,
+	"ops-swot":             OpsSwot,
+	"opsswot":              OpsSwot,
+	"ops-root":             OpsRoot,
+	"opsroot":              OpsRoot,
 }
 
 var (
@@ -403,5 +418,91 @@ func OpsSwot(target string) error {
 		args = append(args, target)
 	}
 	return sh.RunV("arc-brutal", args...)
+}
+
+// extractTargetArgsFromCLI extracts optional target arguments from os.Args for specific target commands.
+func extractTargetArgsFromCLI(targetNames ...string) []string {
+	var targets []string
+	foundTarget := false
+	for _, arg := range os.Args[1:] {
+		if strings.HasPrefix(arg, "-") {
+			continue
+		}
+		if !foundTarget {
+			for _, name := range targetNames {
+				if strings.EqualFold(arg, name) || strings.EqualFold(arg, strings.ReplaceAll(name, "-", "")) {
+					foundTarget = true
+					break
+				}
+			}
+			continue
+		}
+		clean := strings.TrimSpace(arg)
+		if clean != "" && !strings.EqualFold(clean, "all") {
+			targets = append(targets, strings.Fields(strings.ReplaceAll(clean, ",", " "))...)
+		}
+	}
+	return targets
+}
+
+// SyncIssues synchronizes local BACKLOG.md checklists and native blockers with remote GitHub issue states via native Go tasksync package.
+// When called with target arguments (e.g. mage syncissues VPE-001 or mage syncissues 1447 1448), only specified tasks/issues are synced.
+func SyncIssues() error {
+	targets := extractTargetArgsFromCLI("syncissues", "sync-issues", "syncbacklogs", "sync-backlogs")
+	if len(targets) > 0 {
+		fmt.Printf("Synchronizing targeted project backlog items %v with GitHub (Native Go)...\n", targets)
+		if err := tasksync.SyncIssuesTargeted(targets); err != nil {
+			return err
+		}
+		os.Exit(0)
+	}
+	fmt.Println("Synchronizing project backlog with GitHub (Native Go)...")
+	return tasksync.SyncIssuesTargeted(nil)
+}
+
+// SyncIssuesTargeted limits synchronization to target issue numbers or task IDs (e.g. mage syncIssuesTargeted "20 21").
+func SyncIssuesTargeted(target string) error {
+	var targets []string
+	if strings.TrimSpace(target) != "" {
+		targets = strings.Fields(strings.ReplaceAll(target, ",", " "))
+	}
+	if len(targets) > 0 {
+		fmt.Printf("Synchronizing targeted project backlog items %v with GitHub (Native Go)...\n", targets)
+		return tasksync.SyncIssuesTargeted(targets)
+	}
+	fmt.Println("Synchronizing project backlog with GitHub (Native Go)...")
+	return tasksync.SyncIssuesTargeted(nil)
+}
+
+// SyncBacklogs is an alias for SyncIssues.
+func SyncBacklogs() error {
+	return SyncIssues()
+}
+
+// AuditTaskSync runs automated check for drift between Markdown tasks and GitHub Issues via native Go tasksync package.
+func AuditTaskSync() error {
+	return tasksync.AuditTaskSync()
+}
+
+// AuditBacklog runs static schema, header, and Rule 000 taxonomy validation across project backlogs via native Go tasksync package.
+func AuditBacklog() error {
+	return tasksync.AuditBacklog()
+}
+
+// NextTask runs the automated Prudence Task Selection Engine via shared tasksync package.
+func NextTask() error {
+	return tasksync.NextTask()
+}
+
+// Commit executes the 020-GIT compliant commit wrapper via shared tasksync package.
+func Commit() error {
+	fmt.Println("🚀 Executing 020-GIT compliant commit wrapper...")
+	return tasksync.Commit(false)
+}
+
+// CommitMain executes the 020-GIT compliant commit wrapper with main branch override.
+func CommitMain() error {
+	fmt.Println("🚀 Executing 020-GIT compliant commit wrapper (Main Branch Override)...")
+	return tasksync.Commit(true)
 }
 
