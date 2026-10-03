@@ -15,6 +15,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -78,6 +79,23 @@ var Aliases = map[string]interface{}{
 	"opsswot":              OpsSwot,
 	"ops-root":             OpsRoot,
 	"opsroot":              OpsRoot,
+	"release":              Release,
+	"release-audit":        ReleaseAudit,
+	"releaseaudit":         ReleaseAudit,
+	"release-check":        ReleaseCheck,
+	"releasecheck":         ReleaseCheck,
+	"doc-check":            DocCheck,
+	"doccheck":             DocCheck,
+	"bump-changelog":       BumpChangelog,
+	"bumpchangelog":        BumpChangelog,
+	"release-notes":        ReleaseNotes,
+	"releasenotes":         ReleaseNotes,
+	"sync-templates":       SyncTemplates,
+	"synctemplates":        SyncTemplates,
+	"fix-markdown-all":     FixMarkdownAll,
+	"fixmarkdownall":       FixMarkdownAll,
+	"post-release":         PostRelease,
+	"postrelease":          PostRelease,
 }
 
 var (
@@ -505,4 +523,159 @@ func CommitMain() error {
 	fmt.Println("🚀 Executing 020-GIT compliant commit wrapper (Main Branch Override)...")
 	return tasksync.Commit(true)
 }
+
+// BumpChangelog automates bumping the changelog header.
+func BumpChangelog(version string) error {
+	if version == "" {
+		return fmt.Errorf("version argument is required (usage: mage bumpchangelog <version>)")
+	}
+	return sh.RunV("bash", "scripts/bump-changelog.sh", version)
+}
+
+// Release automates the entire release process.
+func Release(version string) error {
+	if version == "" {
+		return fmt.Errorf("version argument is required (usage: mage release <version>)")
+	}
+	return sh.RunV("bash", "scripts/publish-release.sh", version)
+}
+
+// ReleaseNotes extracts release notes for current or specified version.
+func ReleaseNotes(version string) error {
+	if version == "" {
+		return sh.RunV("./scripts/release.sh")
+	}
+	return sh.RunV("./scripts/release.sh", version)
+}
+
+// ReleaseAudit runs all checks for high-assurance release.
+func ReleaseAudit() {
+	mg.Deps(Check)
+}
+
+// DocCheck ensures documentation has been modified since the last release tag (bypass with SKIP_DOC_CHECK=1).
+func DocCheck() error {
+	skipDocCheck := os.Getenv("SKIP_DOC_CHECK")
+	taskID := os.Getenv("TASK_ID")
+
+	if skipDocCheck == "1" {
+		if taskID == "" {
+			return fmt.Errorf("Error: When using SKIP_DOC_CHECK=1, you must provide a documentation backfill ticket via TASK_ID=VPE-XXX (or use TASK_ID=NONE for patch releases/hotfixes). Multiple tasks can be comma-separated.")
+		}
+		fmt.Printf("Skipping doc-check as SKIP_DOC_CHECK=1 is set with TASK_ID=%s.\n", taskID)
+		return nil
+	}
+
+	fmt.Println("Verifying documentation freshness...")
+	latestTag, err := sh.Output("git", "describe", "--tags", "--abbrev=0")
+	if err != nil {
+		latestTag = ""
+	}
+	latestTag = strings.TrimSpace(latestTag)
+
+	if latestTag != "" {
+		changes, _ := sh.Output("git", "diff", "--name-only", latestTag+"..HEAD", "--", "README.md", "RUNBOOK.md", "DECISIONS.md", "AGENTS.md", ".agent/docs/")
+		if strings.TrimSpace(changes) == "" {
+			fmt.Printf("WARNING: Documentation (README.md, RUNBOOK.md, DECISIONS.md, AGENTS.md, .agent/docs/) has NOT been updated since %s.\n", latestTag)
+			fmt.Println("Please run a gap analysis and document new features before releasing.")
+			fmt.Println("To bypass this check, run with environment variable SKIP_DOC_CHECK=1 and TASK_ID=VPE-XXX.")
+			return fmt.Errorf("documentation check failed: stale documentation since %s", latestTag)
+		}
+		fmt.Printf("Documentation verified: Fresh modifications detected since %s.\n", latestTag)
+	} else {
+		fmt.Println("No previous tags found. Skipping doc-check.")
+	}
+	return nil
+}
+
+// ReleaseCheck verifies project state before release.
+func ReleaseCheck() error {
+	mg.Deps(DocCheck, AuditTaskSync)
+
+	branch, err := sh.Output("git", "rev-parse", "--abbrev-ref", "HEAD")
+	if err != nil || strings.TrimSpace(branch) != "main" {
+		return fmt.Errorf("Error: Must be on main branch to release")
+	}
+
+	status, err := sh.Output("git", "status", "--porcelain")
+	if err != nil || len(strings.TrimSpace(status)) > 0 {
+		return fmt.Errorf("Error: Working directory is not clean")
+	}
+
+	fmt.Println("Verifying CHANGELOG.md format...")
+	content, err := os.ReadFile("CHANGELOG.md")
+	if err != nil {
+		return err
+	}
+
+	reVersion := regexp.MustCompile(`(?m)^## \[(?:v)?[0-9]+\.[0-9]+\.[0-9]+\]`)
+	if !reVersion.Match(content) {
+		return fmt.Errorf("Error: CHANGELOG.md must contain a version block ## [vX.Y.Z] or ## [X.Y.Z] before a release")
+	}
+
+	fmt.Println("Verifying mutagenic testing report freshness...")
+	info, err := os.Stat(".agent/docs/gap-analysis/mutation-report.md")
+	if os.IsNotExist(err) {
+		fmt.Println("WARNING: Mutagenic testing report not found. Please run 'mage auditmutagenic' before releasing.")
+	} else {
+		if time.Since(info.ModTime()).Hours() > 7*24 {
+			fmt.Println("WARNING: Mutagenic testing report is older than 7 days. Please run 'mage auditmutagenic' before releasing.")
+		} else {
+			fmt.Println("Mutagenic testing report is fresh.")
+		}
+	}
+
+	mg.Deps(ReleaseAudit)
+	return nil
+}
+
+// SyncTemplates copies and aligns .agent/docs/templates/*.md across target ecosystem repositories via native Go tasksync package.
+func SyncTemplates() error {
+	if _, err := tasksync.SyncIssueTemplates("", nil); err != nil {
+		fmt.Printf("Warning: SyncIssueTemplates failed: %v\n", err)
+	}
+	_, err := tasksync.SyncMasterTemplates("", nil)
+	return err
+}
+
+// FixMarkdownAll automatically fixes Markdown 1000-KEYS frontmatter across all workspace files.
+func FixMarkdownAll() error {
+	return FixMarkdown()
+}
+
+// PostRelease broadcasts product release notes to lab-releases using canonical 3-post hierarchy.
+// Usage: mage postRelease [version] [flags]
+func PostRelease(args string) error {
+	fmt.Println("📢 Broadcast: Publishing product release announcement...")
+	cmdArgs := []string{"post", "--channel", "lab-releases"}
+
+	tokens := strings.Fields(args)
+	var version string
+	for _, tok := range tokens {
+		if !strings.HasPrefix(tok, "-") && version == "" {
+			version = tok
+		}
+	}
+	if version != "" {
+		cmdArgs = append(cmdArgs, "--release", version)
+	} else {
+		cmdArgs = append(cmdArgs, "--release", "latest")
+	}
+
+	for _, tok := range tokens {
+		if tok == "--townsquare" || tok == "--dry-run" || tok == "-n" {
+			cmdArgs = append(cmdArgs, tok)
+		}
+	}
+
+	if _, err := exec.LookPath("arc"); err == nil {
+		return sh.RunV("arc", cmdArgs...)
+	}
+	if _, err := exec.LookPath("arc-post"); err == nil {
+		return sh.RunV("arc-post", cmdArgs[1:]...)
+	}
+	fmt.Println("WARNING: Neither 'arc' nor 'arc-post' found in PATH. Skipping postRelease broadcast.")
+	return nil
+}
+
 
