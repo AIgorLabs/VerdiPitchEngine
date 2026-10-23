@@ -41,7 +41,7 @@ created: "2026-08-17"
 updated: "2026-09-21"
 tags: [agent-card, operational-contract, verdipitchengine, audio, dsp]
 doc_id: "d7ff6c6a-db15-4547-bfb0-0cc82bd2d167"
-body_hash: "59616c8674d52ad1"
+body_hash: "a9bdf2e9c4793196"
 frontmatter_hash: "544e97142a46abbf"
 ---
 
@@ -66,6 +66,10 @@ You are operating inside **VerdiPitchEngine** (`VPE`), a **personal high-fidelit
 4. **Quality Gate Verification**:
    - For all tasks modifying source code (Gates 3, 4, 7), run `mage check` or `go test -v -race ./...` before concluding development.
    - For documentation-only formalization tasks (Gates 2, 5, 6), validate compliance via `arc lintmarkdown` and `arc doctor` without running redundant test suites.
+
+5. **Strict MMVPD Nomenclature & Acronym Invariant ([Rule 027-TASK](.agent/rules/027-task-nomenclature.md), [Rule 000-ECOSYSTEM](.agent/rules/000-aigorlabs-ecosystem-taxonomy.md))**:
+   - **Authoritative Expansion**: **MMVPD** stands strictly and exclusively for **Master Minimum Viable Product Dossier** (pairing `.agent/mvp/<pkg>/MMVPD.md` with `manifest.json`).
+   - **Absolute Prohibition on Hallucination**: Expanding MMVPD as *"Master Multi-Vault Project Dossier"* or any variant is **STRICTLY PROHIBITED**. In the AI.gorLabs taxonomy, "Vault" pertains exclusively to OpenBrain/Obsidian knowledge storage; software product initiatives are Minimum Viable Products (MVPs). Conflating the two is a compliance failure.
 
 ---
 
