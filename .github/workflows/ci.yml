@@ -17,7 +17,7 @@ permissions:
 jobs:
   health-gate:
     name: Ecosystem Health Gate (arc doctor)
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, aws, arm64]
     timeout-minutes: 10
     steps:
       - name: Checkout code
@@ -30,7 +30,7 @@ jobs:
   build:
     name: Build and Test
     needs: health-gate
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, aws, arm64]
     timeout-minutes: 15
     steps:
       - name: Checkout code

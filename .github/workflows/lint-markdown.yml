@@ -13,7 +13,7 @@ concurrency:
 jobs:
   lint-1000-keys:
     name: Lint 1000-KEYS Markdown
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, aws, arm64]
     timeout-minutes: 5
     steps:
       - name: Checkout code
