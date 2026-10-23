@@ -5,6 +5,9 @@ title: "VPE-00002: E2E FFmpeg Integration Tests"
 description: "E2E FFmpeg Integration Tests"
 version: "1.0.0"
 status: "Completed"
+sealed: true
+sealed_at: "2026-10-23T22:43:24Z"
+sealed_by: "Edward Pawlik"
 mattermost_thread_id: "bbuzsuh547fapcn55xozxj15ho"
 mattermost_dispatch_hash: "418df66448eeffaa4dfad27f4eb2befa"
 cssclasses:
@@ -29,7 +32,7 @@ contains_pii: false
 tenant_id: "AI.GOR-ENTERPRISE"
 doc_id: "3f7ee601-e665-4011-9ed3-e8225775f600"
 body_hash: "f50e32db306e0ee9"
-frontmatter_hash: "130ddd733b3a027a"
+frontmatter_hash: "eb90ded19de92e23"
 created: "2026-09-21"
 updated: "2026-05-09"
 tags: ["status/completed", "task-master", "task-spec", "verdipitchengine", "infrastructure-architecture", "ms-ver-1"]
