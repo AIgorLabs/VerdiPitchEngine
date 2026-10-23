@@ -1,1 +1,1 @@
-/Users/epawlik/Dev/Workspace/Archon/scripts/publish-release.sh
+../../Archon/scripts/publish-release.sh

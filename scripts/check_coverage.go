@@ -1,1 +1,1 @@
-/Users/epawlik/Dev/Workspace/Archon/scripts/check_coverage.go
+../../Archon/scripts/check_coverage.go

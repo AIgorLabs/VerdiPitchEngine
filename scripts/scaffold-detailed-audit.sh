@@ -1,1 +1,1 @@
-/Users/epawlik/Dev/Workspace/Archon/scripts/scaffold-detailed-audit.sh
+../../Archon/scripts/scaffold-detailed-audit.sh

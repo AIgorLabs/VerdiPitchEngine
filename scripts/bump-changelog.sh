@@ -1,1 +1,1 @@
-/Users/epawlik/Dev/Workspace/Archon/scripts/bump-changelog.sh
+../../Archon/scripts/bump-changelog.sh
