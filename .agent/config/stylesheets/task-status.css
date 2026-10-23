@@ -1,0 +1,214 @@
+/*
+ * Archon & OpenBrain Task & MMVPD Status Stylesheet
+ * Integrates directly with VS Code markdown.styles and Obsidian snippets.
+ */
+
+.mmvpd-dossier {
+    border-left: 4px solid var(--vscode-charts-purple, #a855f7);
+    padding-left: 12px;
+}
+
+.mmvpd-status-completed,
+.mmvpd-status-released {
+    border-top: 4px solid #2ea043 !important;
+    border-left-color: #2ea043 !important;
+}
+
+.mmvpd-status-completed h1::after,
+.mmvpd-status-released h1::after {
+    content: " 🚀 [SEALED & RELEASED]";
+    font-size: 0.45em;
+    vertical-align: middle;
+    background: rgba(46, 160, 67, 0.2);
+    color: #3fb950;
+    border: 1px solid rgba(46, 160, 67, 0.5);
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.mmvpd-status-active,
+.mmvpd-status-in-progress,
+.mmvpd-status-started {
+    border-top: 4px solid #388bfd !important;
+    border-left-color: #388bfd !important;
+}
+
+.mmvpd-status-active h1::after,
+.mmvpd-status-in-progress h1::after,
+.mmvpd-status-started h1::after {
+    content: " ⚡ [ACTIVE INITIATIVE]";
+    font-size: 0.45em;
+    vertical-align: middle;
+    background: rgba(56, 139, 253, 0.2);
+    color: #58a6ff;
+    border: 1px solid rgba(56, 139, 253, 0.5);
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.mmvpd-status-blocked {
+    border-top: 4px solid #f85149 !important;
+    border-left-color: #f85149 !important;
+}
+
+.mmvpd-status-blocked h1::after {
+    content: " 🚫 [BLOCKED]";
+    font-size: 0.45em;
+    vertical-align: middle;
+    background: rgba(248, 81, 73, 0.2);
+    color: #f85149;
+    border: 1px solid rgba(248, 81, 73, 0.5);
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.mmvpd-status-draft,
+.mmvpd-status-pending,
+.mmvpd-status-planning,
+.mmvpd-status-icebox {
+    border-top: 4px solid #d29922 !important;
+    border-left-color: #d29922 !important;
+}
+
+.mmvpd-status-draft h1::after,
+.mmvpd-status-pending h1::after,
+.mmvpd-status-planning h1::after,
+.mmvpd-status-icebox h1::after {
+    content: " 🧊 [IN PLANNING / ICEBOX]";
+    font-size: 0.45em;
+    vertical-align: middle;
+    background: rgba(210, 153, 34, 0.2);
+    color: #d29922;
+    border: 1px solid rgba(210, 153, 34, 0.5);
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.mmvpd-status-closed,
+.mmvpd-status-abandoned {
+    border-top: 4px solid #8b949e !important;
+    border-left-color: #8b949e !important;
+}
+
+.mmvpd-status-closed h1::after,
+.mmvpd-status-abandoned h1::after {
+    content: " 🛑 [CLOSED / ABANDONED]";
+    font-size: 0.45em;
+    vertical-align: middle;
+    background: rgba(139, 148, 158, 0.2);
+    color: #8b949e;
+    border: 1px solid rgba(139, 148, 158, 0.5);
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.task-completed,
+.archived-dossier {
+    border-left: 4px solid #2ea043 !important;
+    padding-left: 12px;
+}
+
+.task-completed h1::after {
+    content: " ✓ [COMPLETED]";
+    font-size: 0.5em;
+    vertical-align: middle;
+    background: rgba(46, 160, 67, 0.2);
+    color: #3fb950;
+    border: 1px solid rgba(46, 160, 67, 0.5);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.task-active,
+.task-in-progress {
+    border-left: 4px solid #388bfd !important;
+    padding-left: 12px;
+}
+
+.task-active h1::after,
+.task-in-progress h1::after {
+    content: " ⚡ [ACTIVE]";
+    font-size: 0.5em;
+    vertical-align: middle;
+    background: rgba(56, 139, 253, 0.2);
+    color: #58a6ff;
+    border: 1px solid rgba(56, 139, 253, 0.5);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.task-blocked {
+    border-left: 4px solid #f85149 !important;
+    padding-left: 12px;
+}
+
+.task-blocked h1::after {
+    content: " 🚫 [BLOCKED]";
+    font-size: 0.5em;
+    vertical-align: middle;
+    background: rgba(248, 81, 73, 0.2);
+    color: #f85149;
+    border: 1px solid rgba(248, 81, 73, 0.5);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.task-pending,
+.task-draft,
+.task-planning,
+.task-icebox {
+    border-left: 4px solid #d29922 !important;
+    padding-left: 12px;
+}
+
+.task-pending h1::after,
+.task-draft h1::after,
+.task-planning h1::after,
+.task-icebox h1::after {
+    content: " 🧊 [PENDING / ICEBOX]";
+    font-size: 0.5em;
+    vertical-align: middle;
+    background: rgba(210, 153, 34, 0.2);
+    color: #d29922;
+    border: 1px solid rgba(210, 153, 34, 0.5);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.task-closed,
+.task-abandoned {
+    border-left: 4px solid #8b949e !important;
+    padding-left: 12px;
+}
+
+.task-closed h1::after,
+.task-abandoned h1::after {
+    content: " 🛑 [CLOSED / ABANDONED]";
+    font-size: 0.5em;
+    vertical-align: middle;
+    background: rgba(139, 148, 158, 0.2);
+    color: #8b949e;
+    border: 1px solid rgba(139, 148, 158, 0.5);
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-weight: 600;
+}
